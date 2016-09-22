@@ -58,7 +58,7 @@ class Player(name) {
             
             items.append("You are carrying ");
             
-            value allJoiners = [[], [], [" and "], [", ", ", and "]];
+            value allJoiners = [[], [""], [" and ", ""], [", ", ", and "]];
             value joiners = allJoiners[itemCount];
             
             assert(exists joiners);
@@ -75,15 +75,15 @@ class Player(name) {
 
             if (axe) {
                 items.append("an axe");
+                appendJoiner();
             }
             
             if (sword) {
-                appendJoiner();
                 items.append("a sword");
+                appendJoiner();
             }
             
             if (amulet) {
-                appendJoiner();
                 items.append("the magic amulet");
             }
             
