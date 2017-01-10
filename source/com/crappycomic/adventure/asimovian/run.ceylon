@@ -1,5 +1,6 @@
 import com.crappycomic.adventure.common {
     currentRoom,
+    gameDisplayWinMessage = displayWinMessage,
     gameExit = exit,
     gameLayout = layout,
     gameStrings = strings,
@@ -11,7 +12,8 @@ import com.crappycomic.adventure.common {
     roomContents,
     Monster,
     Room,
-    Treasure
+    Treasure,
+    pause
 }
 
 """Runs "Aftermath of the Asimovian Disaster.""""
@@ -19,6 +21,7 @@ shared void run() {
     gameLayout = layout;
     gameExit = exit;
     gameStrings = strings;
+    gameDisplayWinMessage = displayWinMessage;
     currentRoom = wreckedHold;
     
     initializeTreasure();
@@ -30,7 +33,15 @@ shared void run() {
     mainLoop();
 }
 
-"Places [[Monster]]s randomly in several [[Room]]s around the castle."
+"Displays a congratulatory message."
+void displayWinMessage(String name) {
+    print("You are free! You have made it!");
+    pause();
+    print("Your pod sails free into space……");
+    pause();
+}
+
+"Places [[Monster]]s randomly in several [[Room]]s around the ship."
 void initializeMonsters() {
     [
     Monster("Berserk Android", 5),

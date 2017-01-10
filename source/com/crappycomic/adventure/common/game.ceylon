@@ -14,6 +14,9 @@ import ceylon.language.meta.model {
 
 shared late variable Room currentRoom;
 
+"Displays a congratulatory message."
+shared late Anything(String) displayWinMessage;
+
 shared late Room exit;
 
 shared late Layout layout;
@@ -87,7 +90,9 @@ CommandResult consume() {
         variable CommandResult|Integer units = askAgain;
         
         while (units == askAgain) {
-            print(strings.consumePrompt(player.food));
+            print(strings.currentFood(player.food));
+            
+            print(strings.consumePrompt);
             
             units = inputInteger();
             
@@ -326,7 +331,9 @@ shared void mainLoop() {
         }
         
         if (currentRoom == exit) {
-            //displayWinMessage();
+            displayWinMessage(player.name);
+            
+            player.displayScore();
             
             return;
         }
@@ -372,7 +379,7 @@ CommandResult move(Room?(Node) direction, String failureMessage) {
 }
 
 "Pauses execution for a brief period."
-void pause() {
+shared void pause() {
     // Doing it like the original program, so we don't have go native.
     value until = system.milliseconds + 1000;
     

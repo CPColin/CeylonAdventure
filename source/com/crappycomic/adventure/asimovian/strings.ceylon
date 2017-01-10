@@ -13,9 +13,7 @@ object strings extends Strings() {
     
     shared actual String alreadyHaveWeakWeapon => "You already have an ion gun.";
     
-    shared actual String consumePrompt(Integer food)
-        => "You have ``food`` units of oxygen left.
-            How many do you want to add to your tanks?";
+    shared actual String consumePrompt => "How many do you want to add to your tanks?";
     
     shared actual String currentFood(Integer food) => "Your reserve tank holds ``food`` units of oxygen.";
     
@@ -23,6 +21,10 @@ object strings extends Strings() {
         => "Captain ``name``, your strength is ``strength``.";
     
     shared actual String currentWealth(Integer wealth) => "You have $``wealth`` in Solarian credits.";
+    
+    shared actual String danger => "Danger…There is danger here…";
+    
+    shared actual String dangerLevel(Integer strength) => "Your personal danger meter resisters ``strength``!!";
     
     shared actual String foodPrompt => "How many units of oxygen?";
     
@@ -47,8 +49,8 @@ object strings extends Strings() {
     shared actual String provisionsHeading => "A supply android has arrived.";
     
     shared actual String provisionsPrompt
-        => "You can buy 1 - Nucleonic Light    ($15)
-                        2 - Ion Gun            ($10)
+        => "You can buy 1 - Nucleonic light    ($15)
+                        2 - Ion gun            ($10)
                         3 - Laser              ($20)
                         4 - Oxygen     ($2 per unit)
                         5 - Matter transporter ($30)
@@ -67,7 +69,7 @@ object strings extends Strings() {
     
     shared actual String weakWeapon => "an ion gun";
     
-    shared actual String weaponPrompt => "Which weapon? 1 - Ion Gun, 2 - Laser";
+    shared actual String weaponPrompt => "Which weapon? 1 - Ion gun, 2 - Laser";
     
     shared actual String wearingArmor => "You are wearing a combat suit.";
 }

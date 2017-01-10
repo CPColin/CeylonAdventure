@@ -15,7 +15,7 @@ class Player(name) {
     shared MutableList<Monster> monstersKilled = ArrayList<Monster>();
     
     "The name we'll use to address the player."
-    String name;
+    shared String name;
     
     shared variable Integer strength = 100;
     

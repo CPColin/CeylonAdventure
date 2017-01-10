@@ -10,13 +10,17 @@ shared abstract class Strings() {
     
     shared formal String alreadyHaveWeakWeapon;
     
-    shared formal String consumePrompt(Integer food);
+    shared formal String consumePrompt;
     
     shared formal String currentFood(Integer food);
     
     shared formal String currentStrength(String name, Integer strength);
     
     shared formal String currentWealth(Integer wealth);
+    
+    shared formal String danger;
+    
+    shared formal String dangerLevel(Integer strength);
     
     shared formal String foodPrompt;
     

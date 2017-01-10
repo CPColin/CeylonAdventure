@@ -32,10 +32,10 @@ shared class Room({DescriptionLine+} descriptionLines, shared Boolean special = 
             print("There is treasure here worth $``contents``.");
         }
         case (is Monster) {
-            print("Danger…There is a monster here…");
+            print(strings.danger);
             pause();
             print("It is a ``contents.name``!");
-            print("The danger level is ``contents.strength``!!");
+            print(strings.dangerLevel(contents.strength));
         }
         else {
             // Room is empty.
