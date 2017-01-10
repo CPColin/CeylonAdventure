@@ -5,11 +5,7 @@ import ceylon.collection {
 
 "Encapsulates the state of the player in our game."
 class Player(name) {
-    shared variable Boolean amulet = false;
-    
     shared variable Boolean armor = false;
-    
-    shared variable Boolean axe = false;
     
     shared variable Integer food = 0;
     
@@ -19,39 +15,43 @@ class Player(name) {
     shared MutableList<Monster> monstersKilled = ArrayList<Monster>();
     
     "The name we'll use to address the player."
-    shared String name;
+    String name;
     
     shared variable Integer strength = 100;
     
-    shared variable Boolean sword = false;
+    shared variable Boolean strongWeapon = false;
     
     "The number of moves this player has made during this game."
     shared variable Integer tally = 0;
     
+    shared variable Boolean teleporter = false;
+    
     shared variable Integer wealth = 75;
+    
+    shared variable Boolean weakWeapon = false;
     
     "Describes the state of this player."
     shared void describe() {
         if (strength <= 10) { // Slightly more warning than original version.
-            print("Warning, ``name``, your stength is running low.");
+            print(strings.lowStrength(name));
             print("");
         }
         
-        print("``name``, your strength is ``strength``.");
+        print(strings.currentStrength(name, strength));
         
         if (wealth > 0) {
-            print("You have $``wealth``.");
+            print(strings.currentWealth(wealth));
         }
         
         if (food > 0) {
-            print("Your provisions sack holds ``food`` units of food.");
+            print(strings.currentFood(food));
         }
         
         if (armor) {
-            print("You are wearing armor.");
+            print(strings.wearingArmor);
         }
         
-        value itemCount = count({axe, sword, amulet});
+        value itemCount = count({weakWeapon, strongWeapon, teleporter});
         
         if (itemCount > 0) {
             value items = StringBuilder();
@@ -73,18 +73,18 @@ class Player(name) {
                 items.append(joiner);
             }
 
-            if (axe) {
-                items.append("an axe");
+            if (weakWeapon) {
+                items.append(strings.weakWeapon);
                 appendJoiner();
             }
             
-            if (sword) {
-                items.append("a sword");
+            if (strongWeapon) {
+                items.append(strings.strongWeapon);
                 appendJoiner();
             }
             
-            if (amulet) {
-                items.append("the magic amulet");
+            if (teleporter) {
+                items.append(strings.teleporter);
             }
             
             items.append(".");
@@ -99,7 +99,7 @@ class Player(name) {
                 = 3 * tally
                 + 5 * strength
                 + 2 * wealth
-                + food
+                + food // Oxygen was worth $10 in Asimovian Disaster. Good investment!
                 + 30 * monstersKilled.size;
         
         print("Your score is ``score``.");

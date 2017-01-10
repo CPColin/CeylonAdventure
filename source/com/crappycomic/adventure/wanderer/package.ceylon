@@ -1,1 +1,1 @@
-shared package com.crappycomic.adventure.wanderer;
+package com.crappycomic.adventure.wanderer;
