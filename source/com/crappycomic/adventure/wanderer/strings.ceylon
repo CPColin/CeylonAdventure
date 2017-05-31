@@ -30,7 +30,7 @@ object strings extends Strings() {
     
     shared actual String loseMessage => "You have died………";
     
-    shared actual String lowStrength(String name) => "Warning, ``name``, your stregth is running low.";
+    shared actual String lowStrength(String name) => "Warning, ``name``, your strength is running low.";
     
     shared actual String namePrompt => "What is your name, explorer?";
     
