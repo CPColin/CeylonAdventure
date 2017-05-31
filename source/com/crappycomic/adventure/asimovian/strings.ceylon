@@ -24,14 +24,14 @@ object strings extends Strings() {
     
     shared actual String danger => "Danger…There is danger here…";
     
-    shared actual String dangerLevel(Integer strength) => "Your personal danger meter resisters ``strength``!!";
+    shared actual String dangerLevel(Integer strength) => "Your personal danger meter registers ``strength``!!";
     
     shared actual String foodPrompt => "How many units of oxygen?";
     
     shared actual String loseMessage => "You have run out of oxygen……";
     
     shared actual String lowStrength(String name)
-        => "Warning, Captain ``name``, your stregth is running low.
+        => "Warning, Captain ``name``, your strength is running low.
             You need an oxygen boost.";
     
     shared actual String namePrompt => "What is your name, space hero?";
