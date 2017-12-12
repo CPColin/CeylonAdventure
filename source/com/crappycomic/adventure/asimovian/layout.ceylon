@@ -102,7 +102,7 @@ Room passengerQuarters = Room {
 };
 
 /* TODO
- This room is supposed to kill the player after two turns and is also supposed to forbit teleporting.
+ This room is supposed to kill the player after two turns and is also supposed to forbid teleporting.
  I kind of like giving the player an escape route, though.
 */
 Room radiationField = Room {
