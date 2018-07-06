@@ -128,7 +128,7 @@ void displayLoseMessage() {
 CommandResult fight() {
     value monster = roomContents.get(currentRoom);
     
-    if (exists monster, is Monster monster) {
+    if (is Monster monster) {
         variable value monsterStrength = monster.strength;
         
         print("Press Enter to fight."); // Don't have INKEY in Ceylon.
@@ -352,7 +352,7 @@ CommandResult move(Room?(Node) direction, String failureMessage) {
     if (exists newRoom) {
         value contents = roomContents.get(currentRoom);
         
-        if (exists contents, is Monster contents) {
+        if (is Monster contents) {
             // Attempt to flee. The original version had lots of bad logic
             // here, including not checking for a monster first and not
             // actually letting you pick a direction to flee in.
@@ -393,7 +393,7 @@ shared void pause() {
 CommandResult pickUp() {
     value contents = roomContents.get(currentRoom);
     
-    if (exists contents, is Treasure contents) {
+    if (is Treasure contents) {
         if (player.light) {
             player.wealth += contents;
             roomContents.remove(currentRoom);

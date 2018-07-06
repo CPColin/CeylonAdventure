@@ -114,7 +114,7 @@ Room storeroom = Room {
 Room treasury = Room {
     "This room was used as the castle treasury in
      by-gone years…
-     There are no windows, just exists to the
+     There are no windows, just exits to the
      north and to the east."
 };
 
